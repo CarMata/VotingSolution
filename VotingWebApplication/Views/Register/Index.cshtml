@@ -1,0 +1,81 @@
+﻿@model IEnumerable<VotingWebApplication.EN.RegistroNacional>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>IndexRegister</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+           Primer Apellido
+        </th>
+        <th>
+            Segundo Apellido
+        </th>
+        <th>
+            Fecha de nacimiento
+        </th>
+        <th>
+            Numero de DUI
+        </th>
+        <th>
+           Genero
+        </th>
+        <th>
+           Ocupacion
+        </th>
+        <th>
+           Nacionalidad
+        </th>
+        <th>
+           Nacionalidad
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero_dui)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ocupacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nacionalidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
