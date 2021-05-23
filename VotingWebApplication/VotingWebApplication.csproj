@@ -235,14 +235,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PartidoController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\Connection.cs" />
     <Compile Include="DAL\DepartamentoDAL.cs" />
     <Compile Include="DAL\MunicipioDAL.cs" />
+    <Compile Include="DAL\PartidoDAL.cs" />
     <Compile Include="DAL\RegistroDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="EN\Departamento.cs" />
+    <Compile Include="EN\Login.cs" />
     <Compile Include="EN\Municipio.cs" />
+    <Compile Include="EN\Partido.cs" />
     <Compile Include="EN\RegistroNacional.cs" />
     <Compile Include="EN\Usuario.cs" />
     <Compile Include="Global.asax.cs">
@@ -289,6 +295,12 @@
     <Content Include="Views\_ViewImports.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Register\Create.cshtml" />
+    <Content Include="Views\Home\Principal.cshtml" />
+    <Content Include="Views\Login\Create.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Partido\Create.cshtml" />
+    <Content Include="Views\Partido\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

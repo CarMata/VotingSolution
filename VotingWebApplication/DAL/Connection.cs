@@ -9,7 +9,7 @@ namespace VotingWebApplication.DAL
 {
     public class Connection
     {
-        private SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UNJL5N2\\SQLEXPRESS;Initial Catalog=votacionesdb;Integrated Security=True");
+        private SqlConnection conn = new SqlConnection("Data Source=DESKTOP-0JJ49UO\\SQLEXPRESS;Initial Catalog=votacionesdb;Integrated Security=True");
 
         public SqlConnection getConnection()
         {
