@@ -1,0 +1,28 @@
+﻿@model VotingWebApplication.EN.Municipio
+
+<div>
+    <h4>Municipio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idDepartamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idDepartamento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -10,26 +10,26 @@ using VotingWebApplication.EN;
 
 namespace VotingWebApplication.DAL
 {
-    public class DepartamentoDAL
+    public class TipoEleccionDAL
     {
-        public Departamento getById(int pId)
+        public TipoEleccion getById(int pId)
         {
-            Departamento departamento = null;
+            TipoEleccion eleccion = null;
             string ConnectionString = ConfigurationManager.ConnectionStrings["CCBD"].ConnectionString;
             using (SqlConnection con = new SqlConnection(ConnectionString))
                 try
                 {
 
-                    SqlCommand command = new SqlCommand("get_DepartamentoById", con);
+                    SqlCommand command = new SqlCommand("get_TipoEleccionById", con);
                     command.Parameters.Add(new SqlParameter("@Id", pId));
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     con.Open();
                     SqlDataReader reader = command.ExecuteReader();
-                    departamento = new Departamento();
+                    eleccion = new TipoEleccion();
                     while (reader.Read())
                     {
-                        departamento.id = Convert.ToInt32(reader[0]);
-                        departamento.nombre = Convert.ToString(reader[1]);
+                        eleccion.id = Convert.ToInt32(reader[0]);
+                        eleccion.nombre = Convert.ToString(reader[1]);
                     }
                 }
                 catch (Exception e)
@@ -40,75 +40,75 @@ namespace VotingWebApplication.DAL
                 {
                     con.Close();
                 }
-            return departamento;
+            return eleccion;
         }
-        public List<Departamento> getAll()
+        public List<TipoEleccion> getAll()
         {
-            List<Departamento> lsDepartamento = null;
+            List<TipoEleccion> lsEleccion = null;
             string ConnectionString = ConfigurationManager.ConnectionStrings["CCBD"].ConnectionString;
             using (SqlConnection con = new SqlConnection(ConnectionString))
                 try
-               {
-                lsDepartamento = new List<Departamento>();
+                {
+                    lsEleccion = new List<TipoEleccion>();
 
-                SqlCommand command = new SqlCommand("get_Departamentos", con);
+                    SqlCommand command = new SqlCommand("get_TipoEleccion", con);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     con.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
                     while (reader.Read())
-                {
-                    Departamento departamento = new Departamento();
-                    departamento.id = Convert.ToInt32(reader[0]);
-                    departamento.nombre = Convert.ToString(reader[1]);
-                    lsDepartamento.Add(departamento);
+                    {
+                        TipoEleccion eleccion = new TipoEleccion();
+                        eleccion.id = Convert.ToInt32(reader[0]);
+                        eleccion.nombre = Convert.ToString(reader[1]);
+                        lsEleccion.Add(eleccion);
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-            return lsDepartamento;
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            return lsEleccion;
         }
-        public void save(Departamento pDepartamento)
-        {
-            string ConnectionString = ConfigurationManager.ConnectionStrings["CCBD"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-                try
-            {
-                //conn = new Connection().getConnection();
-                SqlCommand command = new SqlCommand("save_Departamento", con);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@nombre", pDepartamento.nombre);
-                con.Open();
-                command.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-
-        }
-
-        public void edit(Departamento pDepartamento)
+        public void save(TipoEleccion pEleccion)
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["CCBD"].ConnectionString;
             using (SqlConnection con = new SqlConnection(ConnectionString))
                 try
                 {
                     //conn = new Connection().getConnection();
-                    SqlCommand command = new SqlCommand("update_Departamento", con);
+                    SqlCommand command = new SqlCommand("save_TipoEleccion", con);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@id", pDepartamento.id);
-                    command.Parameters.AddWithValue("@nombre", pDepartamento.nombre);
+                    command.Parameters.AddWithValue("@nombre", pEleccion.nombre);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+
+        }
+
+        public void edit(TipoEleccion pEleccion)
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["CCBD"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+                try
+                {
+                    //conn = new Connection().getConnection();
+                    SqlCommand command = new SqlCommand("update_TipoEleccion", con);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@id", pEleccion.id);
+                    command.Parameters.AddWithValue("@nombre", pEleccion.nombre);
                     con.Open();
                     command.ExecuteNonQuery();
                 }
@@ -130,7 +130,7 @@ namespace VotingWebApplication.DAL
                 try
                 {
                     //conn = new Connection().getConnection();
-                    SqlCommand command = new SqlCommand("delete_Departamento", con);
+                    SqlCommand command = new SqlCommand("delete_TipoEleccion", con);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@Id", pId);
                     con.Open();

@@ -5,10 +5,9 @@ using System.Web;
 
 namespace VotingWebApplication.EN
 {
-    public class Municipio
+    public class TipoEleccion
     {
         public int id { get; set; }
         public string nombre { get; set; }
-        public int idDepartamento { get; set; }
     }
 }

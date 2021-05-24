@@ -234,22 +234,27 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MunicipioController.cs" />
     <Compile Include="Controllers\PartidoController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\TipoEleccionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\Connection.cs" />
     <Compile Include="DAL\DepartamentoDAL.cs" />
     <Compile Include="DAL\MunicipioDAL.cs" />
     <Compile Include="DAL\PartidoDAL.cs" />
     <Compile Include="DAL\RegistroDAL.cs" />
+    <Compile Include="DAL\TipoEleccionDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="EN\Departamento.cs" />
     <Compile Include="EN\Login.cs" />
     <Compile Include="EN\Municipio.cs" />
     <Compile Include="EN\Partido.cs" />
     <Compile Include="EN\RegistroNacional.cs" />
+    <Compile Include="EN\TipoEleccion.cs" />
     <Compile Include="EN\Usuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -301,6 +306,21 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Partido\Create.cshtml" />
     <Content Include="Views\Partido\Index.cshtml" />
+    <Content Include="Views\Departamento\Create.cshtml" />
+    <Content Include="Views\Departamento\Delete.cshtml" />
+    <Content Include="Views\Departamento\Details.cshtml" />
+    <Content Include="Views\Departamento\Edit.cshtml" />
+    <Content Include="Views\Departamento\Index.cshtml" />
+    <Content Include="Views\Municipio\Create.cshtml" />
+    <Content Include="Views\Municipio\Delete.cshtml" />
+    <Content Include="Views\Municipio\Details.cshtml" />
+    <Content Include="Views\Municipio\Edit.cshtml" />
+    <Content Include="Views\Municipio\Index.cshtml" />
+    <Content Include="Views\TipoEleccion\Create.cshtml" />
+    <Content Include="Views\TipoEleccion\Delete.cshtml" />
+    <Content Include="Views\TipoEleccion\Details.cshtml" />
+    <Content Include="Views\TipoEleccion\Edit.cshtml" />
+    <Content Include="Views\TipoEleccion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
