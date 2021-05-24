@@ -7,21 +7,32 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.nombre)
+            @Html.DisplayNameFor(model => model.foto)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.nombre)
+    <td>
+        @{
+            var base64 = Convert.ToBase64String(item.foto);
+            var imagesrc = string.Format("data:image/jpeg;base64,{0}", base64);
+
+        }
+        <img src="@imagesrc" style='max-height:100px;max-width:100px' />
+
+    </td>
+
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+    </td>
+</tr>
 }
 
 </table>

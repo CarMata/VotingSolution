@@ -1,6 +1,7 @@
 ﻿@model VotingWebApplication.EN.Partido
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Partido", FormMethod.Post,
+                new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     

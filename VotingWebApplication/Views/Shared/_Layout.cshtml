@@ -65,19 +65,18 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Principal", "Principal", "Home")</li>
-                    <li>@Html.ActionLink("Usuario", "Create", "Usuario")</li>
+                    <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
                     <li>
                         @Html.ActionLink("Mantenimiento", "", "")
                         <ul>
-                            <ul>
                                 <li>@Html.ActionLink("Registro", "Index", "Register")</li>
-                                <li>@Html.ActionLink("Partidos", "Index", "Register")</li>
+                                <li>@Html.ActionLink("Partidos", "Index", "Partido")</li>
                                 <li>@Html.ActionLink("Candidatos", "Index", "Register")</li>
                                 <li>@Html.ActionLink("Municipio", "Index", "Municipio")</li>
                                 <li>@Html.ActionLink("Departamento", "Index", "Departamento")</li>
                                 <li>@Html.ActionLink("Usuarios", "Index", "Register")</li>
                                 <li>@Html.ActionLink("Tipo Eleccion", "Index", "TipoEleccion")</li>
-                            </ul>
+                            </ul>                        
                         </ul>
                     </li>
                 </ul>

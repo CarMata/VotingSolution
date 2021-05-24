@@ -31,7 +31,7 @@ namespace VotingWebApplication.DAL
                         Partido partido = new Partido();
                         partido.id = Convert.ToInt32(reader[0]);
                         partido.nombre = Convert.ToString(reader[1]);
-                        partido.foto = (byte[])reader["Imagen"];
+                        partido.foto = (byte[])reader[2];
                         lsPartido.Add(partido);
                     }
                 }
